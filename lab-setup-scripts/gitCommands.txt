@@ -1,0 +1,64 @@
+	student@bchd:~$ git config --global credential.helper store
+
+Replace the Mona Lisa with your GitHub username and THEN run this command. This provides metadata to your commits, and it is not critical that it be your GitHub username, but should identify you.
+
+	student@bchd:~$ git config --global user.name "Mona Lisa"
+
+Replace the monalisa@example.com with your email address and THEN run this command. This provides metadata to your commits, and it is not critical that it be the email you signed up with, but should help identify you.
+
+	student@bchd:~$ git config --global user.email "MonaLisa@example.com"
+
+	student@bchd:~$ mv ~/mycode/ ~/mycode-backup/ 2>/dev/null
+
+The 'mv' is move, ~/mycode/ is the source, ~/mycode-backup/ is the new name, and 2>/dev/null supresses any error, which might occur if you do not already have a ~/mycode folder.
+
+Customize the following link. It's as simple as replacing YOUR USER NAME in https://github.com/YOUR USER NAME/mycode with your username from GitHub, or, just copying the URL at the top of your browser, when you're looking at your mycode repository on GitHub.
+
+	student@bchd:~$ git clone https://github.com/YOUR USER NAME/mycode ~/mycode
+
+If you run into an error with this step, read the instructions once more and try it again!
+
+When prompted for a username and password, the username is your GitHub username and the password is the TOKEN you created earlier. Paste your token when prompted, and remember that in Linux passwords are not displayed when typed!
+
+You should now have a new folder (mycode) in your home directory. Move into it.
+
+	student@bchd:~$ cd /home/student/mycode/
+
+	Great! Try making a file we can commit
+
+	student@bchd:~$ touch /home/student/mycode/alta3research.txt
+
+The following steps are ones you should memorize. You'll be issuing these commands all the time. First issue git status, which will reveal if you added something and forgot about it.
+
+	student@bchd:~/mycode$ git status
+
+Next we'll describe what we want to add to our repo. We'll wildcard this, so everything in the ~/mycode/ directory is added.
+
+	student@bchd:~/mycode$ git add *
+
+Time to perform a commit. This makes a new version.
+
+	student@bchd:~/mycode$ git commit -m "First commit to learn about version controlling"
+
+Now push your new version to GitHub for tracking. By default, the keyword origin points to the repo you cloned the repo from.
+
+	student@bchd:~/mycode$ git push origin HEAD
+
+Type in your GitHub username.
+
+Paste in the GitHub token you generated earlier. You will not have to type this in again, it will be cached
+
+Go up to GitHub, and you should see the file alta3research.txt has appeared in your repository.
+
+Great! Move back to your home directory.
+
+	student@bchd:~/mycode$ cd
+
+That's it for this lab. If you tracking your work on an SCM, perform the following operations.
+
+	cd ~/mycode
+	git status
+	git add /home/student/mycode/*
+	git commit -m "Multistep playbook"
+	git push origin
+	cd ~/
